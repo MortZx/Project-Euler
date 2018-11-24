@@ -16,6 +16,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed
 four million, find the sum of the even-valued terms.
 '''
 
+
 # !!! Solution keeps a list Fib sequence but requires high memory !!
 def sumEvenFib2():
     fib = [1, 2]
@@ -26,6 +27,17 @@ def sumEvenFib2():
             total += fib[-1]
         fib.append(fib[i-1] + fib[i-2])
         i += 1
+    return total
+
+
+# efficient solution
+def sumEvenFib():
+    a, b = 1, 2
+    total = 0
+    while a <= 4000000:
+        if a % 2 ==0:
+            total += a
+        a, b = b, a+b
     return total
 
 
