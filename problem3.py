@@ -14,20 +14,27 @@ What is the largest prime factor of the number 600851475143 ?
 '''
 
 
-# return list of all prime factors of a positive integer
+'''
+Starting with prime number 2, divide n by number if result is whole,
+increment until all numbers (up to n) are checked
+
+@param integer - find all its prime factors
+@return list of all prime factors 
+'''
 def primeFactors(n):
-    assert n >= 2, "A positive integer bigger than 1 should be passed"
+    assert n >= 2, "A positive integer bigger than 1 should be passed!"
     pFactors = []
     isPrime = 2
-    while n > 1:
-        if n % isPrime == 0:
-            pFactors.append(isPrime)
-            n /= isPrime
-        isPrime += 1
-    return pFactors
-
-
+    try: 
+        while n > 1:
+            if n % isPrime == 0:
+                pFactors.append(isPrime)
+                n /= isPrime
+            isPrime += 1
+        return pFactors
+    except (TypeError):
+        raise AssertionError ("A positive integer bigger than 1 should be passed")
 
 
 if __name__ == "__main__":
-	print(primeFactors(-2))
+	print(primeFactors(-3))
