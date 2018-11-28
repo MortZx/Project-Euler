@@ -15,10 +15,12 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 
 
 '''
+Finds the largest palindrome made from the product of two n-digit specific
+numbers. Iterate through all possible numbers and save all palindroms in a list. 
+!! appending to list is costly !!
 
-
-@param 
-@return 
+@param integer - number of digits for multiplied numbers
+@return integer - largest palindrome of the product of two n digit numbers
 '''
 def maxPalindrom(n):
     minNum = 10**(n-1)
@@ -30,6 +32,16 @@ def maxPalindrom(n):
                 palindroms.append(i*x)
     return max(palindroms)
 
+def maxPalindrom2(n):
+    minNum = 10**(n-1)
+    maxNum = 10**(n) 
+    palindrom = max(i*x
+                    for i in range(minNum, maxNum)
+                    for x in range (minNum, maxNum)
+                    if (str(i*x) == str(i*x)[::-1])
+                    )
+    return palindrom
+
 
 if __name__ == "__main__":
-	print(maxPalindrom(2))
+	print(maxPalindrom2(2))
