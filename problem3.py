@@ -33,7 +33,7 @@ def primeFactors(n):
             isPrime += 1
         return pFactors
     except (TypeError):
-        raise AssertionError ("A positive integer bigger than 1 should be passed")
+        raise TypeError ("A positive integer bigger than 1 should be passed")
 
 
 if __name__ == "__main__":
