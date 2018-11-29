@@ -23,25 +23,33 @@ numbers. Iterate through all possible numbers and save all palindroms in a list.
 @return integer - largest palindrome of the product of two n digit numbers
 '''
 def maxPalindrom(n):
-    minNum = 10**(n-1)
-    maxNum = 10**(n) 
-    palindroms = []
-    for i in range(minNum, maxNum):
-        for x in range (minNum, maxNum):
-            if (str(i*x) == str(i*x)[::-1]):    # [::-1] reverses a string
-                palindroms.append(i*x)
-    return max(palindroms)
+    assert n >= 1, "A positive integer bigger than 0 should be passed!"
+    try:
+        minNum = 10**(n-1)
+        maxNum = 10**(n) 
+        palindroms = []
+        for i in range(minNum, maxNum):
+            for x in range (minNum, maxNum):
+                if (str(i*x) == str(i*x)[::-1]):    # [::-1] reverses a string
+                    palindroms.append(i*x)
+        return max(palindroms)
+    except (TypeError):
+        raise TypeError ("A positive integer bigger than 1 should be passed")
 
 def maxPalindrom2(n):
-    minNum = 10**(n-1)
-    maxNum = 10**(n) 
-    palindrom = max(i*x
-                    for i in range(minNum, maxNum)
-                    for x in range (minNum, maxNum)
-                    if (str(i*x) == str(i*x)[::-1])
-                    )
-    return palindrom
+    assert n >= 1, "A positive integer bigger than 0 should be passed!"
+    try:
+        minNum = 10**(n-1)
+        maxNum = 10**(n) 
+        palindrom = max(i*x
+                        for i in range(minNum, maxNum)
+                        for x in range (minNum, maxNum)
+                        if (str(i*x) == str(i*x)[::-1])
+                        )
+        return palindrom
+    except (TypeError):
+        raise TypeError ("A positive integer bigger than 1 should be passed")
 
 
 if __name__ == "__main__":
-	print(maxPalindrom2(2))
+	print(maxPalindrom2('lol'))
