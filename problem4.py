@@ -3,6 +3,8 @@
 Created on Mon Nov 26 19:17:07 2018
 
 @author: MortZ
+
+Project Euler Problem 4
 """
 
 
