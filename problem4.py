@@ -54,4 +54,5 @@ def maxPalindrom2(n):
 
 
 if __name__ == "__main__":
-	print(maxPalindrom2('lol'))
+    numDigits = 3
+    print(maxPalindrom2(numDigits))
