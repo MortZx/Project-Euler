@@ -48,6 +48,7 @@ Differ
 @return integer - difference between square of sum and sum of square of range provided
 '''
 def sumSquareDiff(n):    
+    assert isinstance(n, int), "An integer should be passed!"
     return squareOfSum(n) - sumOfSquares(n) 
     
 
