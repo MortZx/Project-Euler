@@ -17,10 +17,15 @@ What is the 10 001st prime number?
 
 
 '''
+Incrementally check if the current number is evenly divisible by the current 
+list of prime numbers. If not, add to the list of prime numbers until the nth
+specified prime number is found
+
+@param integer - nth prime number to find
+@return integer - nth specified prime number
 '''
 def findPrimeByIndex(n):
     primeList = [2]
-    
     i = 1
     while len(primeList) < n:
         i += 1
