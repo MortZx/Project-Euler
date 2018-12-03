@@ -25,6 +25,7 @@ specified prime number is found
 @return integer - nth specified prime number
 '''
 def findPrimeByIndex(n):
+    assert n >= 1, "A positive intger should be passed!"
     primeList = [2]
     i = 1
     while len(primeList) < n:
