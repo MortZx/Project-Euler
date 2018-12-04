@@ -42,16 +42,21 @@ Find the thirteen adjacent digits in the 1000-digit number that have the greates
 @return - integer - greatest product of n specified adjacent numbers in a string
 '''
 def greatestProd(seq, adj):
+    assert adj >= 1, "number of adjacent numbers to consider must be equal or greater than 1!"
     maxProd = 0
     # iterate through seq with offset
-    for i in range( len(seq) - adj + 1):
-        prod = 1
-        # iterate through desired range
-        for x in seq[i : i+adj]:
-            prod *= int(x)
-        # keep track of highest product
-        if prod > maxProd:
-            maxProd = prod
+    try: 
+        for i in range( len(seq) - adj + 1):
+            prod = 1
+            # iterate through desired range
+            for x in seq[i : i+adj]:
+                prod *= int(x)
+            # keep track of highest product
+            if prod > maxProd:
+                maxProd = prod
+    except (ValueError):
+        raise ValueError ("string sequence should only contain numbers")
+        
     return maxProd
 
 
