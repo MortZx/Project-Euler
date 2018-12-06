@@ -23,12 +23,12 @@ import math
 '''
 '''
 def pythagoreanTriplet(lim):
-    a = 1
+    a = 1.0         # must be a float for sqrt(c) to be a float
     c = 0
     
     for a in range(1, lim):
         # keep condition a < b true
-        b = a + 1
+        #b = a + 1
         
         for b in range (a+1, lim+1):
             c = math.sqrt(a**2 + b**2)
@@ -36,7 +36,8 @@ def pythagoreanTriplet(lim):
             # c must be a float
             if c.is_integer():
                 if b < c:
-                    return c
+                    if a + b + c == lim:
+                        return a*b*c
         
         
 
