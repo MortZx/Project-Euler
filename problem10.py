@@ -36,6 +36,8 @@ def findPrimeBelowN(n):
 
 
 '''
+@param integer - prime numbers below value given
+@return integer - sum of prime numbers
 '''
 def sumPrimes(n):
     return sum(findPrimeBelowN(n))
