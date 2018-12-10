@@ -59,15 +59,39 @@ grid = [ [ 8, 2,22,97,38,15, 0,40, 0,75, 4, 5, 7,78,52,12,50,77,91, 8],
     	[20,73,35,29,78,31,90, 1,74,31,49,71,48,86,81,16,23,57, 5,54],
     	[ 1,70,54,71,83,51,54,69,16,92,33,48,61,43,52, 1,89,19,67,48] ]
 
-def largestProductHorizontally(numAdj):
-    x = 0
+width = len(grid[0])
+length = len(grid)
 
+'''
+iterate through rows, iterate through 
+!! does not return the index of those numbers!
+'''
+def largestProductHorizontally(numAdj):
+    maxProd = 0     # max product of 4 in a row horizontally
+    # iterate through each row
+    for row in range(len(grid)):    
+        maxRowProd = 0  # max product in that row
+        # iterate through row consider numAdj adjacent numbers at a time
+        for offset in range( len(grid[row]) - numAdj + 1): # 0 to 16 offset
+            prod = 1    
+            # find product of numAdj adjacent numbers
+            for num in grid[row][offset: offset + numAdj]:
+                prod *= num
+            # store highest product in that row
+            if prod > maxRowProd:
+                maxRowProd = prod
+        # store highest row product in grid
+        if maxRowProd > maxProd:
+            maxProd = maxRowProd
+    return maxProd
+                
+            
 
 '''
 '''
 def largestProductAdj(numAdj):
     # find largest horizontally
-    maxHorizontal = 0
+    x= 0
     # find largest vertically
     
     # find largest diagonally
@@ -75,4 +99,5 @@ def largestProductAdj(numAdj):
 
 if __name__ == "__main__":
     numAdj = 4
-    print(largestProductAdj(numAdj))
+    print( largestProductHorizontally(numAdj))
+    # print(largestProductAdj(numAdj))
