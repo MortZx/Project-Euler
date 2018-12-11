@@ -59,8 +59,8 @@ grid = [ [ 8, 2,22,97,38,15, 0,40, 0,75, 4, 5, 7,78,52,12,50,77,91, 8],
     	[20,73,35,29,78,31,90, 1,74,31,49,71,48,86,81,16,23,57, 5,54],
     	[ 1,70,54,71,83,51,54,69,16,92,33,48,61,43,52, 1,89,19,67,48] ]
 
-width = len(grid[0])
-length = len(grid)
+# assuming a square grid
+gridSize = len(grid)
 
 '''
 iterate through rows, iterate through 
@@ -69,10 +69,10 @@ iterate through rows, iterate through
 def largestProductHorizontally(numAdj):
     maxProd = 0     # max product of 4 in a row horizontally
     # iterate through each row
-    for row in range(len(grid)):    
+    for row in range(gridSize):    
         maxRowProd = 0  # max product in that row
         # iterate through row consider numAdj adjacent numbers at a time
-        for offset in range( len(grid[row]) - numAdj + 1): # 0 to 16 offset
+        for offset in range( gridSize - numAdj + 1): # 0 to 16 offset
             prod = 1    
             # find product of numAdj adjacent numbers
             for num in grid[row][offset: offset + numAdj]:
@@ -85,7 +85,26 @@ def largestProductHorizontally(numAdj):
             maxProd = maxRowProd
     return maxProd
                 
-            
+'''
+'''
+def largestProductVertically(numAdj):
+    maxProd = 0
+    #iterate through each col
+    for col in range(gridSize):
+        maxColProd = 0
+        # iterate through col, consider numAdj adjacent numbers at a tim
+        for offset in range(gridSize - numAdj + 1): 
+            prod = 1
+            # find product of numAdj adjacent numbers
+            for num in range(numAdj):
+                prod *= grid[num+offset][col]
+            # store highest product in that col
+            if prod > maxColProd:
+                maxColProd = prod
+        # store highest col product in grid
+        if maxColProd > maxProd:
+            maxProd = maxColProd
+    return maxProd
 
 '''
 '''
@@ -100,4 +119,5 @@ def largestProductAdj(numAdj):
 if __name__ == "__main__":
     numAdj = 4
     print( largestProductHorizontally(numAdj))
+    print( largestProductVertically(numAdj))
     # print(largestProductAdj(numAdj))
