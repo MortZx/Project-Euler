@@ -66,79 +66,44 @@ gridSize = len(grid)
 iterate through rows, iterate through 
 !! does not return the index of those numbers!
 '''
-def largestProductHorizontally(numAdj):
-    maxProd = 0     # max product of 4 in a row horizontally
-    # iterate through each row
-    for row in range(gridSize):    
-        maxRowProd = 0  # max product in that row
-        # iterate through row consider numAdj adjacent numbers at a time
-        for offset in range( gridSize - numAdj + 1): # 0 to 16 offset
-            prod = 1    
-            # find product of numAdj adjacent numbers
-            for num in grid[row][offset: offset + numAdj]:
-                prod *= num
-            # store highest product in that row
-            if prod > maxRowProd:
-                maxRowProd = prod
-        # store highest row product in grid
-        if maxRowProd > maxProd:
-            maxProd = maxRowProd
-    return maxProd
-                
-'''
-'''
-def largestProductVertically(numAdj):
-    maxProd = 0
-    #iterate through each col
-    for col in range(gridSize):
-        maxColProd = 0
-        # iterate through col, consider numAdj adjacent numbers at a tim
-        for offset in range(gridSize - numAdj + 1): 
-            prod = 1
-            # find product of numAdj adjacent numbers
-            for num in range(numAdj):
-                prod *= grid[num+offset][col]
-            # store highest product in that col
-            if prod > maxColProd:
-                maxColProd = prod
-        # store highest col product in grid
-        if maxColProd > maxProd:
-            maxProd = maxColProd
-    return maxProd
 
-'''
-start at 0,0. move horizontally, store largest product
-then move 1 down and continue
-'''
-def largestProductDiagonally(numAdj):
-    maxProd = 0
-    for row in range(gridSize - numAdj + 1):
-        maxDiagProd = 0
-        for offset in range(gridSize - numAdj + 1):
-            prod = 1
-            for num in range(numAdj):
-                prod *= grid[row + num][offset + num]
-            # store highest product in that col
-            if prod > maxDiagProd:
-                maxDiagProd = prod
-        # store highest col product in grid
-        if maxDiagProd > maxProd:
-            maxProd = maxDiagProd
-    return maxProd
-
+        
+        
+def maxProdInRange(numAdj, i, j, offseti, offsetj):
+    prod = 1
+    for num in range(numAdj):
+        prod *= grid[i + num * offseti][j + num * offsetj]
+    return prod
+        
 '''
 '''
 def largestProductAdj(numAdj):
-    # find largest horizontally
-    x= 0
-    # find largest vertically
-    
-    # find largest diagonally
+    # iterate thorugh every number and find product in 4 directions:
+    # right, down, diagonal right and diagonal left
+    maxProd = 0
+    for i in range(gridSize):
+        for j in range(gridSize):
+            # check right
+            if (j + numAdj  <= gridSize):
+                maxProd = max( maxProdInRange(numAdj, i, j, 0, 1), maxProd )
+            
+            # check down
+            if (i + numAdj <= gridSize):
+                maxProd = max( maxProdInRange(numAdj, i, j, 1, 0), maxProd )
+                
+            # check diag right
+            if (  (i + numAdj <= gridSize) and (j + numAdj  <= gridSize) ):
+                maxProd = max( maxProdInRange(numAdj, i, j, 1, 1), maxProd )
+                
+            # check diag left
+            if ( (numAdj -1 <= i) and (j + numAdj  <= gridSize)):
+                maxProd = max( maxProdInRange(numAdj, i, j, -1, 1), maxProd )
+            
+    return maxProd
+                
 
 
 if __name__ == "__main__":
     numAdj = 4
-    print( largestProductHorizontally(numAdj))
-    print( largestProductVertically(numAdj))
-    print( largestProductDiagonally(numAdj))
+    print( largestProductAdj(numAdj))
     # print(largestProductAdj(numAdj))
