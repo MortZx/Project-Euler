@@ -62,48 +62,53 @@ grid = [ [ 8, 2,22,97,38,15, 0,40, 0,75, 4, 5, 7,78,52,12,50,77,91, 8],
 # assuming a square grid
 gridSize = len(grid)
 
-'''
-iterate through rows, iterate through 
-!! does not return the index of those numbers!
-'''
+# how many adjacent numbers to consider
+numAdj = 4
 
-        
-        
-def maxProdInRange(numAdj, i, j, offseti, offsetj):
-    prod = 1
-    for num in range(numAdj):
-        prod *= grid[i + num * offseti][j + num * offsetj]
-    return prod
-        
 '''
+Iterate thorugh every number and find product in 4 directions:
+    right, down, diagonal right and diagonal left
+!! does not return the index of those numbers!
+
+@return - integer - largest product of numAdj numbers in any direction
 '''
-def largestProductAdj(numAdj):
-    # iterate thorugh every number and find product in 4 directions:
-    # right, down, diagonal right and diagonal left
+def largestProductAdj():
     maxProd = 0
     for i in range(gridSize):
         for j in range(gridSize):
             # check right
             if (j + numAdj  <= gridSize):
-                maxProd = max( maxProdInRange(numAdj, i, j, 0, 1), maxProd )
+                maxProd = max( maxProdInRange(i, j, 0, 1), maxProd )
             
             # check down
             if (i + numAdj <= gridSize):
-                maxProd = max( maxProdInRange(numAdj, i, j, 1, 0), maxProd )
+                maxProd = max( maxProdInRange(i, j, 1, 0), maxProd )
                 
             # check diag right
             if (  (i + numAdj <= gridSize) and (j + numAdj  <= gridSize) ):
-                maxProd = max( maxProdInRange(numAdj, i, j, 1, 1), maxProd )
+                maxProd = max( maxProdInRange(i, j, 1, 1), maxProd )
                 
             # check diag left
             if ( (numAdj -1 <= i) and (j + numAdj  <= gridSize)):
-                maxProd = max( maxProdInRange(numAdj, i, j, -1, 1), maxProd )
+                maxProd = max( maxProdInRange(i, j, -1, 1), maxProd )
             
     return maxProd
                 
 
+'''
+Based on current grid coordinate and direction considered, find product of adjacent numbers
+@param i: integer - x-coordinate in grid
+@param j: integer - y coordinate in grid
+@param offseti: integer (binary) - allow to include offset in x coordinate
+@param offsetj: integer (binary) - allow to include offset in y coordinate
+@return - integer - product of numAdj numbers in a direction
+'''
+def maxProdInRange(i, j, offseti, offsetj):
+    prod = 1
+    for num in range(numAdj):
+        prod *= grid[i + num * offseti][j + num * offsetj]
+    return prod
+
 
 if __name__ == "__main__":
-    numAdj = 4
-    print( largestProductAdj(numAdj))
-    # print(largestProductAdj(numAdj))
+    print( largestProductAdj() )
