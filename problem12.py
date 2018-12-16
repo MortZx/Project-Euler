@@ -30,17 +30,47 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 '''
 
+divisors = 500
 
 #### function to calc list of natural numbers
 # first natural number = 1
 # new natural number = 2*i + 1
 # keep i as index 
+# keep track of triangle number index --> not necessary?
+
+def triangleNumbers():
+    i = 2
+    trianglePrev = 1
+    triangleNumIndex = 1
+    while True:
+        triangleNum = trianglePrev + i
+        triangleNumIndex += 1   # not necessary?
+        
+        # if trangleNum > Divisors, check for number of divisors
+        # limits number of function calls
+        if (calcNumDivisors(triangleNum)):   # emulate do-while
+            return triangleNum
+        
+        i += 1
+        trianglePrev = triangleNum
 
 
 #### function find number of divisors
 # pass int
 # iterate over number up to int to find if divisble 
+def calcNumDivisors(triangleNum):
+    numDivisors = 0
+    for i in range(1, triangleNum+1):
+        if triangleNum % i == 0:
+            numDivisors += 1
+    if numDivisors >= divisors:
+        return True
+    else:
+        return False
 
 
 # natural number must be at least 500 before being considered
 # 
+
+if __name__ == "__main__":
+    print(triangleNumbers())
