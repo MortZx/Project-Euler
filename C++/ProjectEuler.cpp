@@ -11,8 +11,11 @@ using std::endl;
 
 int main()
 {
-	int lim = 1000;
-	cout << "Solution to problem 1: " << problem1(lim) << endl;
+	// int lim = 1000;
+	// cout << "Solution to problem 1: " << problem1(lim) << endl;
+
+	int lim = 4000000;
+	cout << "Solution to problem 2: " << problem2(lim) << endl;
 
 	return 0;
 }
