@@ -37,4 +37,4 @@ def primeFactors(n):
 
 
 if __name__ == "__main__":
-	print(primeFactors(-3))
+	print(primeFactors(600851475143))
