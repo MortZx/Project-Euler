@@ -2,8 +2,12 @@
 
 #include "Problems.h"
 #include <vector>
+#include <cmath>
+#include <string>
 
 using std::vector;
+using std::pow;
+using std::to_string;
 
 /*
 =================
@@ -83,4 +87,38 @@ int problem3(int num) {
 		isPrime += 1;
 	}
 	return pFactors.back();
+}
+
+
+/*
+=================
+=   Problem 4   =	Largest palindrome product
+==================
+
+
+A palindromic number reads the same both ways. The largest palindrome made from
+the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.
+*/
+
+// Finds the largest palindrome made from the product of two n-digit specific
+// numbers.Iterate through all possible numbers and save all palindroms in a list.
+// !!appending to list is costly !!
+
+// @param integer - number of digits for multiplied numbers
+// @return integer - largest palindrome of the product of two n digit numbers
+int problem4(int numDigits) {
+	int minNum = pow(10, numDigits - 1);
+	int maxNum = pow(10, numDigits);
+	int isPrime = 2;
+	vector<int> palindroms;
+	for (size_t i = minNum; i < maxNum; ++i) {
+		for (size_t x = minNum; x < maxNum; ++x) {
+			if (to_string(i*x) == to_string(i*x)[::-1]) {
+				palindroms.push_back(i*x);
+			}
+		}
+	}
+	return max(palindroms);
 }
