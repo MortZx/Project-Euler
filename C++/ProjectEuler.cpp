@@ -19,9 +19,9 @@ int main()
 
 	unsigned long long int num = 600851475143;
 	cout << "Solution to problem 3: " << problem3(num) << endl;
-
-	//int numDigits = 3;
-	//cout << "Solution to problem 4: " << problem4(numDigits) << enfl;
+	
+	unsigned int numDigits = 3;
+	cout << "Solution to problem 4: " << problem4(numDigits) << endl;
 
 	return 0;
 }
