@@ -19,9 +19,12 @@ int main()
 
 	unsigned long long int num = 600851475143;
 	cout << "Solution to problem 3: " << problem3(num) << endl;
-	
+
 	unsigned int numDigits = 3;
 	cout << "Solution to problem 4: " << problem4(numDigits) << endl;
+
+	unsigned int evenlyDivisibleRange = 20;
+	cout << "Solution to problem 5: " << problem5(evenlyDivisibleRange) << endl;
 
 	return 0;
 }
