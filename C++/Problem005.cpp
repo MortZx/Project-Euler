@@ -1,20 +1,10 @@
 #include "pch.h"
 #include "Problems.h"
 
-#include <vector>
-#include <cmath>
-#include <string>
-#include <algorithm>
-
-using std::vector;
-using std::pow;
-using std::string;
-using std::to_string;
-
 
 /*
 =================
-=   Problem 4   =	Smallest Multiple
+=   Problem 5   =	Smallest Multiple
 ==================
 
 
@@ -24,14 +14,12 @@ What is the smallest positive number that is evenly divisible by all of the numb
 */
 
 
-/*
-Iterate through numbers, for each number test divisible for all n specified numbers in an iterated manner unless division has a remainder.
-
+// Iterate through numbers, for each number test divisible for all n specified numbers in an iterated manner unless division has a remainder.
 unsigned int problem5(unsigned int evenlyDivisibleRange) {
 	unsigned int i = 0;
 	while (true) {
 		i++;
-		for (size_t x = 1; x < evenlyDivisibleRange; ++x) {
+		for (unsigned int x = 1; x < evenlyDivisibleRange + 1; ++x) {
 			if (i % x != 0) {
 				break;
 			}
@@ -40,22 +28,4 @@ unsigned int problem5(unsigned int evenlyDivisibleRange) {
 			}
 		}
 	}
-}
-*/
-
-unsigned int problem5(unsigned int evenlyDivisibleRange) {
-	unsigned int i = 0;
-	bool flag = false;
-	while (flag == false) {
-		++i;
-		for (unsigned int x = 1; x < evenlyDivisibleRange+1; ++x) {
-			if (i % x != 0) {
-				break;
-			}
-			if (x == evenlyDivisibleRange) {
-				flag = true;
-			}
-		}
-	}
-	return i;
 }
