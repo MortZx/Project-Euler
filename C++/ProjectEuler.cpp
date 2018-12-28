@@ -11,6 +11,7 @@ using std::endl;
 
 int main()
 {
+	/*
 	unsigned int lim = 1000;
 	cout << "Solution to problem 1: " << problem1(lim) << endl;
 
@@ -25,6 +26,9 @@ int main()
 
 	unsigned int evenlyDivisibleRange = 20;
 	cout << "Solution to problem 5: " << problem5(evenlyDivisibleRange) << endl;
+	*/
+	unsigned int naturalNumRange = 100;
+	cout << "Solution to problem 6: " << problem6(naturalNumRange) << endl;
 
 	return 0;
 }
