@@ -30,6 +30,9 @@ int main()
 	unsigned int naturalNumRange = 100;
 	cout << "Solution to problem 6: " << problem6(naturalNumRange) << endl;
 
+	unsigned int index = 10001;
+	cout << "Solution to problem 7: " << problem7(index) << endl;
+
 	return 0;
 }
 

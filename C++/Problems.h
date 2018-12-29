@@ -6,3 +6,4 @@ unsigned int problem3(unsigned long long int);
 unsigned int problem4(unsigned int);
 unsigned int problem5(unsigned int);
 unsigned int problem6(unsigned int);
+unsigned int problem7(unsigned int);
