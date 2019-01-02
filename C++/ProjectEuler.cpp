@@ -26,12 +26,18 @@ int main()
 
 	unsigned int evenlyDivisibleRange = 20;
 	cout << "Solution to problem 5: " << problem5(evenlyDivisibleRange) << endl;
-	*/
+	
 	unsigned int naturalNumRange = 100;
 	cout << "Solution to problem 6: " << problem6(naturalNumRange) << endl;
 
 	unsigned int index = 10001;
 	cout << "Solution to problem 7: " << problem7(index) << endl;
+	
+	unsigned int adj = 4;
+	cout << "Solution to probelm 8: " << problem8(adj) << endl;
+	*/
+	unsigned int lim = 1000;
+	cout << "Solution to problem 9: " << problem9(lim) << endl;
 
 	return 0;
 }
