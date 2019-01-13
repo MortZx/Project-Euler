@@ -5,7 +5,8 @@ Created on Sat Dec 15 20:14:05 2018
 @author: MortZ
 
 Project Euler Problem 12:
-    Highly divisible triangular number
+Highly divisible triangular number
+    
 """
 
 
@@ -41,10 +42,10 @@ divisors = 500
 def triangleNumbers():
     i = 2
     trianglePrev = 1
-    triangleNumIndex = 1
+    #triangleNumIndex = 1
     while True:
         triangleNum = trianglePrev + i
-        triangleNumIndex += 1   # not necessary?
+        #triangleNumIndex += 1   # not necessary?
         
         # if trangleNum > Divisors, check for number of divisors
         # limits number of function calls
