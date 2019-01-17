@@ -114,3 +114,23 @@ numbers = [ 37107287533902102798797998220837590246510135740250,
             72107838435069186155435662884062257473692284509516,
             20849603980134001723930671666823555245252804609722,
             53503534226472524250874054075591789781264330331690 ]
+
+
+'''
+@param int - first n digits to return
+'''
+def sumOfNoDigits(n):
+    sumOfNums = 0
+    for num in numbers:
+        sumOfNums += num
+    # return first 10 digits
+    return int(str(sumOfNums)[:n]) 
+
+if __name__ == "__main__":
+    print(sumOfNoDigits(10))
+    
+    
+    
+    
+    
+    
