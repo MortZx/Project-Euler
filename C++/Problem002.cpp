@@ -1,6 +1,3 @@
-#include "pch.h"
-#include "Problems.h"
-
 /*
 =================
 =   Problem 2   =	Even Fibonacci numbers
@@ -14,6 +11,10 @@ By starting with 1 and 2, the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not exceed
 four million, find the sum of the even-valued terms.
 */
+
+#include "pch.h"
+#include "Problems.h"
+
 
 // Can also create a solution that keeps the list of Fib sequence if needed
 unsigned int problem2(unsigned int lim) {
