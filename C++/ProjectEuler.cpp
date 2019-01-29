@@ -3,27 +3,29 @@
 
 #include "pch.h"
 #include <iostream>
-#include <ctime>
+#include <chrono>
 
 #include "Problems.h"
 
 using std::cout;
 using std::endl;
-using std::clock;
+using std::chrono::duration_cast;
+using std::chrono::milliseconds;
+using std::chrono::microseconds;
+using std::chrono::high_resolution_clock;
 
 int main()
 {
-	std::clock_t start;
-	double duration;
-
-	start = clock();
+	high_resolution_clock::time_point t1 = high_resolution_clock::now();
 	int lim = 1000;
-	printf("Solution to problem 1: %d \t\t in %f seconds", problem1(lim), ((clock()-start) / ((double) CLOCKS_PER_SEC)) );
-	
+	printf("Solution to problem 1: %d", problem1(lim) );
+	high_resolution_clock::time_point t2 = high_resolution_clock::now();
+	auto elapsed = duration_cast<microseconds>(t2 - t1).count();
+	printf("\t in %ld seconds", elapsed);
 	/*
-	start = clock()
-	lim = 4000000;
-	cout << "Solution to problem 2: " << problem2(lim) << "\t\t in << ((clock()-start) / ((double) CLOCKS_PER_SEC)) << seconds << endl;
+	start = clock();
+	int lim = 4000000;
+	printf("Solution to problem 12: %d \t\t in %f seconds", problem2(lim), ((clock() - start) / ((double)CLOCKS_PER_SEC)));
 	
 	start = clock();
 	unsigned long long int num = 600851475143;
@@ -31,20 +33,20 @@ int main()
 	
 	start = clock();
 	unsigned int numDigits = 3;
-	cout << "Solution to problem 4: " << problem4(numDigits) << endl;
-
+	printf("Solution to problem 4: %d \t in %f seconds", problem4(numDigits), ((clock() - start) / ((double)CLOCKS_PER_SEC)));
+	*
 	start = clock();
 	unsigned int evenlyDivisibleRange = 20;
-	cout << "Solution to problem 5: " << problem5(evenlyDivisibleRange) << endl;
+	printf("Solution to problem 5: %d \t in %f seconds", problem5(evenlyDivisibleRange), ((clock() - start) / ((double)CLOCKS_PER_SEC)));
 	
 	start = clock();
 	unsigned int naturalNumRange = 100;
-	cout << "Solution to problem 6: " << problem6(naturalNumRange) << endl;
-
+	printf("Solution to problem 6: %d \t in %f seconds", problem6(naturalNumRange), ((clock() - start) / ((double)CLOCKS_PER_SEC)));
+	*
 	start = clock();
 	unsigned int index = 10001;
-	cout << "Solution to problem 7: " << problem7(index) << endl;
-	
+	printf("Solution to problem 7: %d \t in %f seconds", problem7(index), ((clock() - start) / ((double)CLOCKS_PER_SEC)));
+	*
 	start = clock();
 	unsigned int adj = 4;
 	cout << "Solution to probelm 8: " << problem8(adj) << endl;
