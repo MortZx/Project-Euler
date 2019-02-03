@@ -16,21 +16,28 @@ using std::chrono::high_resolution_clock;
 
 int main()
 {
-	high_resolution_clock::time_point t1 = high_resolution_clock::now();
+	/*
+	high_resolution_clock::time_point start = high_resolution_clock::now();
 	int lim = 1000;
 	printf("Solution to problem 1: %d", problem1(lim) );
-	high_resolution_clock::time_point t2 = high_resolution_clock::now();
-	auto elapsed = duration_cast<microseconds>(t2 - t1).count();
-	printf("\t in %ld seconds", elapsed);
-	/*
-	start = clock();
+	high_resolution_clock::time_point end = high_resolution_clock::now();
+	auto elapsed = duration_cast<microseconds>(start - end).count();
+	printf("\t in %ld microseconds", elapsed);
+	*
+	high_resolution_clock::time_point start = high_resolution_clock::now();
 	int lim = 4000000;
-	printf("Solution to problem 12: %d \t\t in %f seconds", problem2(lim), ((clock() - start) / ((double)CLOCKS_PER_SEC)));
-	
-	start = clock();
+	printf("Solution to problem 2: %d", problem2(lim));
+	high_resolution_clock::time_point end = high_resolution_clock::now();
+	auto elapsed = duration_cast<milliseconds>(start - end).count();
+	printf("\t in %ld milliseconds", elapsed);
+	/*/
+	high_resolution_clock::time_point start = high_resolution_clock::now();
 	unsigned long long int num = 600851475143;
-	printf("Solution to problem 3: %d \t\t in %f seconds", problem3(num), ((clock()-start) / ((double) CLOCKS_PER_SEC)));
-	
+	printf("Solution to problem 3: %d", problem3(num));
+	high_resolution_clock::time_point end = high_resolution_clock::now();
+	auto elapsed = duration_cast<milliseconds>(start - end).count();
+	printf("\t in %ld milliseconds", elapsed);
+	/*
 	start = clock();
 	unsigned int numDigits = 3;
 	printf("Solution to problem 4: %d \t in %f seconds", problem4(numDigits), ((clock() - start) / ((double)CLOCKS_PER_SEC)));
