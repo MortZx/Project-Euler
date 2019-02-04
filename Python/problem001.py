@@ -14,6 +14,7 @@ we get 3, 5, 6 and 9. The sum of these multiples is 23.
 Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
+from timeit import default_timer as timer
 
 # Check if number is divisible by 3 or 5 and add to the sum
 def compute():
@@ -22,4 +23,7 @@ def compute():
     
 
 if __name__ == "__main__":
-	print(compute())
+    start = timer()
+    print(compute())
+    end = timer()
+    print(end - start)

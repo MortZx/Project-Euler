@@ -16,6 +16,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed
 four million, find the sum of the even-valued terms.
 '''
 
+from timeit import default_timer as timer
 
 # !!! Solution keeps a list Fib sequence but requires high memory !!
 def sumEvenFib2():
@@ -42,4 +43,7 @@ def sumEvenFib():
 
 
 if __name__ == "__main__":
-	print(sumEvenFib())
+    start = timer()
+    print(sumEvenFib())
+    end = timer()
+    print(end - start)

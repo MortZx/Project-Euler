@@ -13,6 +13,8 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 What is the largest prime factor of the number 600851475143 ?
 '''
 
+from timeit import default_timer as timer
+
 
 '''
 Starting with prime number 2, divide n by number if result is whole,
@@ -37,4 +39,7 @@ def primeFactors(n):
 
 
 if __name__ == "__main__":
-	print(primeFactors(600851475143))
+    start = timer()
+    print(primeFactors(600851475143))
+    end = timer()
+    print(end - start)

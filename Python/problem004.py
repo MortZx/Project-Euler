@@ -15,6 +15,8 @@ the product of two 2-digit numbers is 9009 = 91 × 99.
 Find the largest palindrome made from the product of two 3-digit numbers.
 '''
 
+from timeit import default_timer as timer
+
 
 '''
 Finds the largest palindrome made from the product of two n-digit specific
@@ -54,5 +56,8 @@ def maxPalindrom2(n):
 
 
 if __name__ == "__main__":
+    start = timer()
     numDigits = 3
     print(maxPalindrom2(numDigits))
+    end = timer()
+    print(end - start)

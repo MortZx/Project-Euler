@@ -16,6 +16,8 @@ What is the smallest positive number that is evenly divisible by all of the
 numbers from 1 to 20?
 '''
 
+from timeit import default_timer as timer
+
 
 '''
 Iterate through numbers, for each number test divisible for all n specified 
@@ -44,5 +46,8 @@ def divisibleByAll(n):
 
 
 if __name__ == "__main__":
+    start = timer()
     evenlyDivisibleRange = 20
     print(divisibleByAll(evenlyDivisibleRange))
+    end = timer()
+    print(end - start)
