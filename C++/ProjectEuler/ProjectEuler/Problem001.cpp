@@ -10,17 +10,25 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 */
 
 #include "pch.h"
+#include "Utils.h"
 
 #include <iostream>
 
 
 // Check if number is divisible by 3 or 5 and add to the sum
-int problem1(int lim) {
+int problem1(int lim) 
+{
 	unsigned int ans = 0;
-	for (int i = 0; i < lim; ++i) {
-		if (i % 3 == 0 || i % 5 == 0) {
-			ans += i;
-		}
+
+	if (Utils::IsDivisibleBy(lim, 3))
+	{
+		ans += 3;
 	}
+	
+	if (Utils::IsDivisibleBy(lim, 5))
+	{
+		ans += 5;
+	}
+
 	return ans;
 }
