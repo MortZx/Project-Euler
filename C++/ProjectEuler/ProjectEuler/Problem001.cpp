@@ -20,14 +20,13 @@ int problem1(int lim)
 {
 	unsigned int ans = 0;
 
-	if (Utils::IsDivisibleBy(lim, 3))
+	for (int i = 0; i < lim; i++)
 	{
-		ans += 3;
-	}
-	
-	if (Utils::IsDivisibleBy(lim, 5))
-	{
-		ans += 5;
+		if (Utils::IsDivisibleBy(i, 3) || 
+			Utils::IsDivisibleBy(i, 5))
+		{
+			ans += i;
+		}
 	}
 
 	return ans;

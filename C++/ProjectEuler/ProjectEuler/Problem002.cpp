@@ -14,21 +14,26 @@ four million, find the sum of the even-valued terms.
 
 #include "pch.h"
 #include "Problems.h"
+#include "Utils.h"
 
 
 // Can also create a solution that keeps the list of Fib sequence if needed
 unsigned int problem2(unsigned int lim) {
+	
 	unsigned int a = 1;
 	unsigned int b = 2;
 	unsigned int next = 0;
 	unsigned int total = 0;
-	while (a <= lim) {
-		if (a % 2 == 0) {
-			total += a;
+
+	std::vector<uint> vecFib;
+	Utils::GetFibonacciSequenceUpTo(lim, vecFib);
+
+	for (int i = 0; i < vecFib.size(); i++)
+	{
+		if (Utils::IsDivisibleBy(vecFib.at(i), 2))
+		{
+			total += vecFib.at(i);
 		}
-		next = a + b;
-		a = b;
-		b = next;
 	}
 	return total;
 }
