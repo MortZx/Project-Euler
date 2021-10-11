@@ -30,13 +30,15 @@ using std::to_string;
 
 // @param integer - number of digits for multiplied numbers
 // @return integer - largest palindrome of the product of two n digit numbers
-unsigned int problem4(unsigned int numDigits) {
-	unsigned int minNum = pow(10, numDigits - 1);
-	unsigned int maxNum = pow(10, numDigits);
+unsigned int problem4(unsigned int numDigits) 
+{
+	unsigned int minNum = static_cast<unsigned int>(pow(10, numDigits - 1));
+	unsigned int maxNum = static_cast<unsigned int>(pow(10, numDigits));
 	unsigned int isPrime = 2;
-	vector<int> palindroms;
-	for (size_t i = minNum; i < maxNum; ++i) {
-		for (size_t x = minNum; x < maxNum; ++x) {
+	vector<unsigned int> palindroms;
+
+	for (unsigned int i = minNum; i < maxNum; ++i) {
+		for (unsigned int x = minNum; x < maxNum; ++x) {
 			string productString = to_string(i*x);
 
 			// create new variable for reverse string
@@ -48,6 +50,7 @@ unsigned int problem4(unsigned int numDigits) {
 			}
 		}
 	}
+
 	// !! max_element returns an iterator so need to use * in front !!
 	auto maxPalindrome = *max_element(std::begin(palindroms), std::end(palindroms));
 	return maxPalindrome;

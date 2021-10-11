@@ -16,7 +16,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 
 // Check if number is divisible by 3 or 5 and add to the sum
-int problem1(int lim) 
+unsigned int problem1(int lim) 
 {
 	unsigned int ans = 0;
 

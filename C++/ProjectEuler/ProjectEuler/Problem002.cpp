@@ -28,7 +28,7 @@ unsigned int problem2(unsigned int lim) {
 	std::vector<uint> vecFib;
 	Utils::GetFibonacciSequenceUpTo(lim, vecFib);
 
-	for (int i = 0; i < vecFib.size(); i++)
+	for (size_t i = 0; i < vecFib.size(); i++)
 	{
 		if (Utils::IsDivisibleBy(vecFib.at(i), 2))
 		{

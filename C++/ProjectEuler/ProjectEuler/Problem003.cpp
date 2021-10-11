@@ -11,18 +11,21 @@ What is the largest prime factor of the number 600851475143 ?
 
 #include "pch.h"
 #include "Problems.h"
+#include "Utils.h"
 
 #include <vector>
 
-using std::vector;
-
 
 // Can also create a solution that keeps the list of Fib sequence if needed
-unsigned int problem3(unsigned long long int num) {
-	vector<unsigned int> pFactors;
+unsigned int problem3(unsigned long long int num) 
+{
+	std::vector<unsigned int> pFactors;
 	unsigned int isPrime{ 2 };
-	while (num > 1) {
-		if (num % isPrime == 0) {
+
+	while (num > 1) 
+	{
+		if (num % isPrime == 0) 
+		{
 			pFactors.push_back(isPrime);
 			num /= isPrime;
 		}

@@ -19,7 +19,7 @@ bool Utils::IsDivisibleBy(int num, int divideBy)
 }
 
 
-void Utils::GetFibonacciSequenceUpTo(const uint lim, std::vector<uint>& vecFib)
+void Utils::GetFibonacciSequenceUpTo(const unsigned int lim, std::vector<unsigned int>& vecFib)
 {
 	unsigned int a = 1;
 	unsigned int b = 2;
@@ -37,7 +37,7 @@ void Utils::GetFibonacciSequenceUpTo(const uint lim, std::vector<uint>& vecFib)
 }
 
 
-void Utils::GetFirstXFibonacciSequence(const uint lim, std::vector<uint>& vecFib)
+void Utils::GetFirstXFibonacciSequence(const unsigned int lim, std::vector<unsigned int>& vecFib)
 {
 	unsigned int a = 1;
 	unsigned int b = 2;
