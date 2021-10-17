@@ -4,9 +4,6 @@
 #include <vector>
 #include <string>
 
-using std::vector;
-using std::string;
-
 
 /*
 =================
@@ -40,13 +37,9 @@ What is the value of this product?
 */
 
 
-/*
-Incrementally check if the current number is evenly divisible by the current
-list of prime numbers. If not, add to the list of prime numbers until the nth
-specified prime number is found
-*/
-unsigned int problem8(unsigned int adj) {
-	string seq[20]{ "73167176531330624919225119674426574742355349194934"
+
+unsigned int problem8(unsigned int digits) {
+	std::string sequence{ "73167176531330624919225119674426574742355349194934"
 		"96983520312774506326239578318016984801869478851843"
 		"85861560789112949495459501737958331952853208805511"
 		"12540698747158523863050715693290963295227443043557"
@@ -67,18 +60,22 @@ unsigned int problem8(unsigned int adj) {
 		"05886116467109405077541002256983155200055935729725"
 		"71636269561882670428252483600823257530420752963450" };
 
-	unsigned long long int maxProd = 0;
-	// iterate through set with offset
-	for (unsigned int row = 0; row < (sizeof(seq) / sizeof(*seq)) - adj + 1; ++row) {
+	unsigned long long int max = 0;
+
+	// iterate through the sequence
+	for (size_t i = 0; i < sequence.length() - digits + 1; i++)
+	{
+		// find the product of the adjacent digits
 		unsigned long long int prod = 1;
-		// iterate through range
-		for (unsigned int num = row; num < row + adj; ++num) {
-			prod *= (int)num;
+		for (size_t offset = 0; offset < digits; offset++)
+		{
+			prod *= (sequence.at(i + offset) - '0');
 		}
-		// keep track of highest product
-		if (prod > maxProd) {
-			maxProd = prod;
+
+		if (prod > max)
+		{
+			max = prod;
 		}
 	}
-	return maxProd;
+	return max;
 }

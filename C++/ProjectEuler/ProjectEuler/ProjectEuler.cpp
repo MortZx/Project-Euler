@@ -30,7 +30,6 @@ int main()
 		case 1:
 		{
 			int lim = 1000;
-
 			// Only print the result on the last iteration
 			i == 0 ? printf("%d", problem1(lim))
 				   : problem1(lim);
@@ -80,9 +79,9 @@ int main()
 		}
 		case 8:
 		{
-			unsigned int adj = 4;
-			i == 0 ? printf("%d", problem8(adj))
-				   : problem8(adj);
+			unsigned int digits = 13;
+			i == 0 ? printf("%d", problem8(digits))
+				   : problem8(digits);
 			break;
 		}
 		case 9:
