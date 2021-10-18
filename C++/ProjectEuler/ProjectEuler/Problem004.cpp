@@ -37,15 +37,18 @@ unsigned int problem4(unsigned int numDigits)
 	unsigned int isPrime = 2;
 	vector<unsigned int> palindroms;
 
-	for (unsigned int i = minNum; i < maxNum; ++i) {
-		for (unsigned int x = minNum; x < maxNum; ++x) {
+	for (unsigned int i = minNum; i < maxNum; ++i) 
+	{
+		for (unsigned int x = minNum; x < maxNum; ++x) 
+		{
 			string productString = to_string(i*x);
 
 			// create new variable for reverse string
 			string revString{ productString };
 			std::reverse(revString.begin(), revString.end());
 
-			if (productString == revString) {
+			if (productString == revString) 
+			{
 				palindroms.push_back(i*x);
 			}
 		}

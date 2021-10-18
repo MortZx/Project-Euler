@@ -33,30 +33,42 @@ FIND NUMBER OF DIVISORS
 pass int
 iterate over number up to int to find if divisible
 */
-int calcNumDivisors(int triangleNum, int divisors) {
+int calcNumDivisors(int triangleNum, int divisors) 
+{
 	int numDivisors = 0;
-	for (int i = 1; i < triangleNum + 1; ++i) {
+	for (int i = 1; i < triangleNum + 1; ++i) 
+	{
 		if (triangleNum % i == 0)
+		{
 			numDivisors += 1;
+		}
 	}
 	if (numDivisors >= divisors)
+	{
 		return true;
+	}
 	else
+	{
 		return false;
+	}
 }
 
 
-int problem12(int divisors) {
+int problem12(int divisors) 
+{
 	int i = 2;
 	int trianglePrev = 1;
 	int triangleNum = 0;
 
-	while (true) {
+	while (true) 
+	{
 		triangleNum = trianglePrev + i;
 
 		// check number of divisors
 		if (calcNumDivisors(triangleNum, divisors))
+		{
 			return triangleNum;
+		}
 
 		i += 1;
 		trianglePrev = triangleNum;

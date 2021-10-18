@@ -72,9 +72,11 @@ Based on current grid coordinate and direction considered, find product of adjac
 @param offsetj: integer (binary) - allow to include offset in y coordinate
 @return - integer - product of numAdj numbers in a direction
 */
-unsigned int maxProdInRange(unsigned int i, unsigned int j, int offseti, unsigned int offsetj) {
+unsigned int maxProdInRange(unsigned int i, unsigned int j, int offseti, unsigned int offsetj) 
+{
 	unsigned int prod = 1;
-	for (unsigned int num = 0; num < numAdj; ++num) {
+	for (unsigned int num = 0; num < numAdj; ++num) 
+	{
 		prod *= grid[i + num * offseti][j + num * offsetj];
 	}
 	return prod;
@@ -87,27 +89,34 @@ Iterate thorugh every number and find product in 4 directions:
 !! does not return the index of those numbers!
 @return - integer - largest product of numAdj numbers in any direction
 */
-unsigned int problem11() {
+unsigned int problem11() 
+{
 	unsigned int maxProd = 0;
-	for (unsigned int i = 0; i < gridSize; ++i) {
-		for (unsigned int j = 0; j < gridSize; ++j) {
+	for (unsigned int i = 0; i < gridSize; ++i) 
+	{
+		for (unsigned int j = 0; j < gridSize; ++j) 
+		{
 			// check right
-			if (j + numAdj <= gridSize) {
+			if (j + numAdj <= gridSize) 
+			{
 				maxProd = std::max(maxProdInRange(i, j, 0, 1), maxProd);
 			}
 
 			// check down
-			if (i + numAdj <= gridSize) {
+			if (i + numAdj <= gridSize) 
+			{
 				maxProd = std::max(maxProdInRange(i, j, 1, 0), maxProd);
 			}
 
 			// check diag right
-			if ((i + numAdj <= gridSize) && (j + numAdj <= gridSize)) {
+			if ((i + numAdj <= gridSize) && (j + numAdj <= gridSize)) 
+			{
 				maxProd = std::max(maxProdInRange(i, j, 1, 1), maxProd);
 			}
 
 			// check diag left
-			if ((numAdj - 1 <= i) && (j + numAdj <= gridSize)) {
+			if ((numAdj - 1 <= i) && (j + numAdj <= gridSize)) 
+			{
 				maxProd = std::max(maxProdInRange(i, j, -1, 1), maxProd);
 			}
 		}

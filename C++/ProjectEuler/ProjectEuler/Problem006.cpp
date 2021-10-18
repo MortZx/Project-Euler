@@ -17,18 +17,22 @@ What is the smallest positive number that is evenly divisible by all of the numb
 */
 
 
-unsigned int squareOfSum(unsigned int naturalNumRange) {
+unsigned int squareOfSum(unsigned int naturalNumRange) 
+{
 	unsigned int sumNum = 0;
-	for (unsigned int i = 0; i < naturalNumRange + 1; ++i) {
+	for (unsigned int i = 0; i < naturalNumRange + 1; ++i) 
+	{
 		sumNum += i;
 	}
 	return pow(sumNum, 2);
 }
 
 
-unsigned int sumOfSquares(unsigned int naturalNumRange) {
+unsigned int sumOfSquares(unsigned int naturalNumRange) 
+{
 	unsigned int sumPow = 0;
-	for (unsigned int i = 0; i < naturalNumRange + 1; ++i) {
+	for (unsigned int i = 0; i < naturalNumRange + 1; ++i) 
+	{
 		sumPow += pow(i, 2);
 	}
 	return sumPow;
@@ -36,6 +40,7 @@ unsigned int sumOfSquares(unsigned int naturalNumRange) {
 
 
 // 
-unsigned int problem6(unsigned int naturalNumRange) {
+unsigned int problem6(unsigned int naturalNumRange) 
+{
 	return (squareOfSum(naturalNumRange) - sumOfSquares(naturalNumRange));
 }

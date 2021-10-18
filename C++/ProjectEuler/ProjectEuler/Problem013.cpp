@@ -124,14 +124,22 @@ std::string numbers[100] ={ "37107287533902102798797998220837590246510135740250"
 							"20849603980134001723930671666823555245252804609722",
 							"53503534226472524250874054075591789781264330331690" };
 
-void problem13() {
+void problem13() 
+{
 	std::string result = "";
 	char digitToAdd;
 	int carry;
-	for (int j = 49; j >= 0; ++j) {				// iterate though digits
+
+	// iterate though digits
+	for (int j = 49; j >= 0; ++j) 
+	{
 		int digitSum = 0;
-		for (int i = 0; i < 100; ++i) {			// iterate through numbers
-			digitSum += (int)(numbers[i][j]) - 48;		// add digits together
+		
+		// iterate through numbers
+		for (int i = 0; i < 100; ++i) 
+		{
+			// add digits together
+			digitSum += (int)(numbers[i][j]) - 48;
 		}
 		digitToAdd = char(digitSum % 10);
 		carry = digitSum / 10;
