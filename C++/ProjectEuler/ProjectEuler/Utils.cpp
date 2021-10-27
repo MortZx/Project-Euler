@@ -62,27 +62,52 @@ specified prime number is found
 */
 unsigned int Utils::GetNthPrimeNumber(unsigned int index)
 {
+	// First prime is 2
 	std::vector<unsigned int> primeList{ 2 };
-	unsigned int i = 1;
 
-	while (primeList.size() < index) {
-		i += 1;
-		// iterate through prime list
-		// check if divisible by all prime, if yes +1
-		for (auto prime : primeList) 
+	// We know all prime numbers are odd except 2 so we can increment by 2
+	for (unsigned int i = 3; i < index; i += 2)
+	{
+		// Number must not be divisible by a prime 
+		for (auto prime : primeList)
 		{
-			if (i % prime == 0) 
+			if (i % prime == 0)
 			{
 				break;
 			}
-			else 
+			else if (prime == primeList.back())
 			{
-				if (prime == primeList.back()) 
-				{
-					primeList.push_back(i);
-				}
+				primeList.push_back(i);
 			}
 		}
 	}
 	return primeList.back();
+}
+
+
+/*
+ * Populate vector up to Nth prime number
+ */
+void Utils::GetPrimeVecUpToNth(unsigned int lim, std::vector<unsigned int>& primeList)
+{
+	// first prime number is 2
+	primeList.clear();
+	primeList.push_back(2);
+
+	// we know all prime numbers are odd except 2 so we can increment by 2
+	for (unsigned int i = 3; i < lim; i += 2)
+	{
+		// Number must not be divisible by a prime 
+		for (auto prime : primeList)
+		{
+			if (i % prime == 0)
+			{
+				break;
+			}
+			else if (prime == primeList.back())
+			{
+				primeList.push_back(i);
+			}
+		}
+	}
 }

@@ -13,4 +13,5 @@ namespace Utils
 	void GetFibonacciSequenceUpTo(const unsigned int lim, std::vector<unsigned int>& vecFib);
 	void GetFirstXFibonacciSequence(const unsigned int lim, std::vector<unsigned int>& vecFib);
 	unsigned int GetNthPrimeNumber(unsigned int index);
+	void GetPrimeVecUpToNth(unsigned int lim, std::vector<unsigned int>& primeList);
 }

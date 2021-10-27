@@ -1,7 +1,9 @@
 #include "pch.h"
 #include "Problems.h"
+#include "Utils.h"
 
 #include <vector>
+#include <numeric>
 
 
 /*
@@ -23,7 +25,8 @@ unsigned long long int problem10(unsigned int n)
 	unsigned long long int sum = 2;
 
 	// iterate through all number to find the first n prime numbers and keeping track of the sum
-	for (unsigned int i = 2; i < n; ++i) 
+	// we know all prime numbers are odd except 2 so we can increment by 2
+	for (unsigned int i = 3; i < n; i += 2) 
 	{
 		for (auto prime : primeList) 
 		{
@@ -42,5 +45,13 @@ unsigned long long int problem10(unsigned int n)
 
 		}
 	}
+	return sum;
+
+	// Alternative simple but less efficient solution:
+	primeList.clear();
+	sum = 0;
+	Utils::GetPrimeVecUpToNth(n, primeList);
+	sum = std::accumulate(primeList.begin(), primeList.end(), (unsigned long long int)0);
+
 	return sum;
 }
