@@ -38,8 +38,11 @@ What is the greatest product of four adjacent numbers in the same direction
 (up, down, left, right, or diagonally) in the 20×20 grid?
 */
 
-unsigned int grid[20][20] = {
-	{8, 2,22,97,38,15, 0,40, 0,75, 4, 5, 7,78,52,12,50,77,91, 8},
+const unsigned int gridSize = 20;
+const unsigned int numAdj = 4;
+
+const unsigned int grid[20][20] = {
+		{8, 2,22,97,38,15, 0,40, 0,75, 4, 5, 7,78,52,12,50,77,91, 8},
 		{49,49,99,40,17,81,18,57,60,87,17,40,98,43,69,48, 4,56,62, 0},
 		{81,49,31,73,55,79,14,29,93,71,40,67,53,88,30, 3,49,13,36,65},
 		{52,70,95,23, 4,60,11,42,69,24,68,56, 1,32,56,71,37, 2,36,91},
@@ -60,24 +63,21 @@ unsigned int grid[20][20] = {
 		{20,73,35,29,78,31,90, 1,74,31,49,71,48,86,81,16,23,57, 5,54},
 		{1,70,54,71,83,51,54,69,16,92,33,48,61,43,52, 1,89,19,67,48} };
 
-unsigned int gridSize = 20;
-
-unsigned int numAdj = 4;
 
 /*
 Based on current grid coordinate and direction considered, find product of adjacent numbers
-@param i: integer - x-coordinate in grid
-@param j: integer - y coordinate in grid
-@param offseti: integer (binary) - allow to include offset in x coordinate
-@param offsetj: integer (binary) - allow to include offset in y coordinate
-@return - integer - product of numAdj numbers in a direction
+@param xIndex:  int - x-coordinate in grid
+@param yIndex:	int - y-coordinate in grid
+@param xOffset: int (binary) - allow to include offset in x coordinate
+@param yOffset: int (binary) - allow to include offset in y coordinate
+@return - unsigned int - product of numAdj numbers in a direction
 */
-unsigned int maxProdInRange(unsigned int i, unsigned int j, int offseti, unsigned int offsetj) 
+unsigned int maxProdInRange(unsigned int xIndex, unsigned int yIndex, int xOffset, unsigned int yOffset) 
 {
 	unsigned int prod = 1;
 	for (unsigned int num = 0; num < numAdj; ++num) 
 	{
-		prod *= grid[i + num * offseti][j + num * offsetj];
+		prod *= grid[xIndex + num * xOffset][yIndex + num * yOffset];
 	}
 	return prod;
 }
@@ -123,3 +123,4 @@ unsigned int problem11()
 	}
 	return maxProd;
 }
+// 2022 ms with array
