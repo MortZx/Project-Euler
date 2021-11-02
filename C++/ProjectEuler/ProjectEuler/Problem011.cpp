@@ -123,4 +123,3 @@ unsigned int problem11()
 	}
 	return maxProd;
 }
-// 2022 ms with array

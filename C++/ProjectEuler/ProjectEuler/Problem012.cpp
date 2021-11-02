@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Problems.h"
+#include "Utils.h"
 
 
 /*
@@ -28,44 +29,18 @@ What is the value of the first triangle number to have over five hundred divisor
 */
 
 
-/*
-FIND NUMBER OF DIVISORS
-pass int
-iterate over number up to int to find if divisible
-*/
-int calcNumDivisors(int triangleNum, int divisors) 
+unsigned int problem12(const unsigned int divisors) 
 {
-	int numDivisors = 0;
-	for (int i = 1; i < triangleNum + 1; ++i) 
-	{
-		if (triangleNum % i == 0)
-		{
-			numDivisors += 1;
-		}
-	}
-	if (numDivisors >= divisors)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-
-int problem12(int divisors) 
-{
-	int i = 2;
-	int trianglePrev = 1;
-	int triangleNum = 0;
+	unsigned int i = 2;
+	unsigned int trianglePrev = 1;
+	unsigned int triangleNum = 0;
 
 	while (true) 
 	{
 		triangleNum = trianglePrev + i;
 
 		// check number of divisors
-		if (calcNumDivisors(triangleNum, divisors))
+		if (Utils::CalcNumDivisors(triangleNum) >= divisors)
 		{
 			return triangleNum;
 		}

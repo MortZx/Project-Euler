@@ -11,5 +11,5 @@ unsigned int problem8(unsigned int);
 float problem9(unsigned int);
 unsigned long long int problem10(unsigned int);
 unsigned int problem11();
-int problem12(int);
+unsigned int problem12(const unsigned int divisors);
 void problem13();

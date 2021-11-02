@@ -111,3 +111,32 @@ void Utils::GetPrimeVecUpToNth(unsigned int lim, std::vector<unsigned int>& prim
 		}
 	}
 }
+
+/*
+FIND NUMBER OF DIVISORS
+pass int
+iterate over number up to int to find if divisible
+*/
+unsigned int Utils::CalcNumDivisors(const int num)
+{
+	unsigned int numDivisors = 0;
+	for (unsigned int i = 1; i < num + 1; ++i)
+	{
+		if (num % i == 0)
+		{
+			numDivisors += 1;
+		}
+	}
+	return numDivisors;
+}
+
+void Utils::GetVecDivisors(const int num, std::vector<unsigned int>& vecDivisors)
+{
+	for (unsigned int i = 1; i < num + 1; ++i)
+	{
+		if (num % i == 0)
+		{
+			vecDivisors.push_back(i);
+		}
+	}
+}
