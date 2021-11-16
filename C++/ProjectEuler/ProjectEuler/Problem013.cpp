@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "Problems.h"
 
-#include<string>
 #include<iostream>
 
 
@@ -22,6 +21,10 @@ each number can be saved as a string or as an array
 
 
 */
+
+const unsigned int MAX_DIGITS = 50;
+const unsigned int ASCII_CODE_0 = 48;
+const unsigned int FIRST_10_DIGITS = 10;
 
 std::string numbers[100] ={ "37107287533902102798797998220837590246510135740250",
 							"46376937677490009712648124896970078050417018260538",
@@ -124,14 +127,13 @@ std::string numbers[100] ={ "37107287533902102798797998220837590246510135740250"
 							"20849603980134001723930671666823555245252804609722",
 							"53503534226472524250874054075591789781264330331690" };
 
-void problem13() 
+void problem13(std::string& strRes) 
 {
-	std::string result = "";
-	char digitToAdd;
-	int carry;
+	char cDigitToAdd = '0';
+	int carry = 0;
 
 	// iterate though digits
-	for (int j = 49; j >= 0; ++j) 
+	for (int j = (MAX_DIGITS - 1); j >= 0; j--)
 	{
 		int digitSum = 0;
 		
@@ -139,13 +141,21 @@ void problem13()
 		for (int i = 0; i < 100; ++i) 
 		{
 			// add digits together
-			digitSum += (int)(numbers[i][j]) - 48;
+			digitSum += (int)(numbers[i][j]) - ASCII_CODE_0;
 		}
-		digitToAdd = char(digitSum % 10);
+		
+		// add the carry and update it
+		digitSum += carry;
 		carry = digitSum / 10;
-		// save last digit to new string
-		result.insert(0, 1, digitToAdd);
+
+		// convert the digit to a char and add it to the number string
+		cDigitToAdd = '0' + static_cast<char>(digitSum % 10);
+		strRes.insert(0, 1, cDigitToAdd);
 	}
-	result = std::to_string(carry) + result;
-	std::cout << result;
+	
+	// add the final carry
+	strRes = std::to_string(carry) + strRes;
+
+	// only keep the first 10 digits
+	strRes = strRes.substr(0, FIRST_10_DIGITS);
 }
