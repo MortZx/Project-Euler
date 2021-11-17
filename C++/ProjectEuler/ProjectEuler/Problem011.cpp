@@ -38,8 +38,8 @@ What is the greatest product of four adjacent numbers in the same direction
 (up, down, left, right, or diagonally) in the 20×20 grid?
 */
 
-const unsigned int gridSize = 20;
-const unsigned int numAdj = 4;
+const unsigned int GRID_SIZE = 20;
+const unsigned int ADJACENT_NUMS = 4;
 
 const unsigned int grid[20][20] = {
 		{8, 2,22,97,38,15, 0,40, 0,75, 4, 5, 7,78,52,12,50,77,91, 8},
@@ -75,7 +75,7 @@ Based on current grid coordinate and direction considered, find product of adjac
 unsigned int maxProdInRange(unsigned int xIndex, unsigned int yIndex, int xOffset, unsigned int yOffset) 
 {
 	unsigned int prod = 1;
-	for (unsigned int num = 0; num < numAdj; ++num) 
+	for (unsigned int num = 0; num < ADJACENT_NUMS; ++num)
 	{
 		prod *= grid[xIndex + num * xOffset][yIndex + num * yOffset];
 	}
@@ -92,30 +92,30 @@ Iterate thorugh every number and find product in 4 directions:
 unsigned int problem11() 
 {
 	unsigned int maxProd = 0;
-	for (unsigned int i = 0; i < gridSize; ++i) 
+	for (unsigned int i = 0; i < GRID_SIZE; ++i)
 	{
-		for (unsigned int j = 0; j < gridSize; ++j) 
+		for (unsigned int j = 0; j < GRID_SIZE; ++j)
 		{
 			// check right
-			if (j + numAdj <= gridSize) 
+			if (j + ADJACENT_NUMS <= GRID_SIZE)
 			{
 				maxProd = std::max(maxProdInRange(i, j, 0, 1), maxProd);
 			}
 
 			// check down
-			if (i + numAdj <= gridSize) 
+			if (i + ADJACENT_NUMS <= GRID_SIZE)
 			{
 				maxProd = std::max(maxProdInRange(i, j, 1, 0), maxProd);
 			}
 
 			// check diag right
-			if ((i + numAdj <= gridSize) && (j + numAdj <= gridSize)) 
+			if ((i + ADJACENT_NUMS <= GRID_SIZE) && (j + ADJACENT_NUMS <= GRID_SIZE))
 			{
 				maxProd = std::max(maxProdInRange(i, j, 1, 1), maxProd);
 			}
 
 			// check diag left
-			if ((numAdj - 1 <= i) && (j + numAdj <= gridSize)) 
+			if ((ADJACENT_NUMS - 1 <= i) && (j + ADJACENT_NUMS <= GRID_SIZE))
 			{
 				maxProd = std::max(maxProdInRange(i, j, -1, 1), maxProd);
 			}
