@@ -120,7 +120,7 @@ iterate over number up to int to find if divisible
 unsigned int Utils::CalcNumDivisors(const int num)
 {
 	unsigned int numDivisors = 0;
-	for (unsigned int i = 1; i < num + 1; ++i)
+	for (int i = 1; i < num + 1; ++i)
 	{
 		if (num % i == 0)
 		{
@@ -132,7 +132,7 @@ unsigned int Utils::CalcNumDivisors(const int num)
 
 void Utils::GetVecDivisors(const int num, std::vector<unsigned int>& vecDivisors)
 {
-	for (unsigned int i = 1; i < num + 1; ++i)
+	for (int i = 1; i < num + 1; ++i)
 	{
 		if (num % i == 0)
 		{

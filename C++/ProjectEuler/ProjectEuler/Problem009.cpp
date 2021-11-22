@@ -26,13 +26,13 @@ Find the product abc.
 /*
 
 */
-float problem9(unsigned int lim) 
+double problem9(unsigned int lim) 
 {
-	float c = 0.0;
+	double c = 0.0;
 
-	for (float a = 1.0; a < lim; ++a) 
+	for (double a = 1.0; a < lim; ++a) 
 	{
-		for (float b = a + 1; b < lim + 1; ++b) 
+		for (double b = a + 1; b < lim + 1; ++b) 
 		{
 			// a^2 + b^2 = c^2
 			c = sqrt(pow(a, 2) + pow(b, 2));
@@ -51,4 +51,5 @@ float problem9(unsigned int lim)
 			}
 		}
 	}
+	return 0.0;
 }

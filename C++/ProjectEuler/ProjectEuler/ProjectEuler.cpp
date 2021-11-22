@@ -80,7 +80,7 @@ int main()
 		case 8:
 		{
 			unsigned int digits = 13;
-			i == 0 ? printf("%d", problem8(digits))
+			i == 0 ? printf("%llu", problem8(digits))
 				   : problem8(digits);
 			break;
 		}
