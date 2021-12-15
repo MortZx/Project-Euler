@@ -9,6 +9,10 @@ Useful functions compiled from problem solutions.
 #include "pch.h"
 #include "Utils.h"
 
+
+/*
+ * Returns true when dividing two numbers with remainder 0
+ */
 bool Utils::IsDivisibleBy(int num, int divideBy)
 {
 	if (num % divideBy == 0)
@@ -19,6 +23,9 @@ bool Utils::IsDivisibleBy(int num, int divideBy)
 }
 
 
+/*
+ * Stores the Fibonacci numbers up to a max value
+ */
 void Utils::GetFibonacciSequenceUpTo(const unsigned int lim, std::vector<unsigned int>& vecFib)
 {
 	unsigned int a = 1;
@@ -37,6 +44,9 @@ void Utils::GetFibonacciSequenceUpTo(const unsigned int lim, std::vector<unsigne
 }
 
 
+/*
+ * Stores the first X Fibonacci numbers 
+ */
 void Utils::GetFirstXFibonacciSequence(const unsigned int lim, std::vector<unsigned int>& vecFib)
 {
 	unsigned int a = 1;
@@ -56,10 +66,9 @@ void Utils::GetFirstXFibonacciSequence(const unsigned int lim, std::vector<unsig
 
 
 /*
-Incrementally check if the current number is evenly divisible by the current
-list of prime numbers. If not, add to the list of prime numbers until the nth
-specified prime number is found
-*/
+ * Incrementally check if the current number is evenly divisible by the current list of prime numbers.
+ * If not, add to the list of prime numbers until the nth specified prime number is found.
+ */
 unsigned int Utils::GetNthPrimeNumber(unsigned int index)
 {
 	// First prime is 2
@@ -113,10 +122,9 @@ void Utils::GetPrimeVecUpToNth(unsigned int lim, std::vector<unsigned int>& prim
 }
 
 /*
-FIND NUMBER OF DIVISORS
-pass int
-iterate over number up to int to find if divisible
-*/
+ * How many numbers can a number be divided by? Division must result in whole number, no decimals
+ * Iterate between 1 and num checking if divisible with no remainder
+ */
 unsigned int Utils::CalcNumDivisors(const int num)
 {
 	unsigned int numDivisors = 0;
@@ -130,6 +138,11 @@ unsigned int Utils::CalcNumDivisors(const int num)
 	return numDivisors;
 }
 
+
+/*
+ * Store all divisors of a number
+ * See Utils::CalcNumDivisors(..)
+ */
 void Utils::GetVecDivisors(const int num, std::vector<unsigned int>& vecDivisors)
 {
 	for (int i = 1; i < num + 1; ++i)
