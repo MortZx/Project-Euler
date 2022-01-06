@@ -27,7 +27,7 @@ namespace Utils
 	void GetFibonacciSequenceUpTo(const unsigned int lim, std::vector<unsigned int>& vecFib);
 
 	/**
-	 * STores the firs Nth Fibonacci sequence numbers
+	 * Stores the first Nth Fibonacci sequence numbers
 	 *
 	 * @param lim Nth number
 	 * @param vecFib Vector to store the sequence in

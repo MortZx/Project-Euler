@@ -15,3 +15,4 @@ unsigned long long int problem10(unsigned int);
 unsigned int problem11();
 unsigned int problem12(const unsigned int divisors);
 void problem13(std::string& strRes);
+unsigned int problem14(const unsigned int maxLim);
