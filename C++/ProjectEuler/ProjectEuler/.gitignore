@@ -3,3 +3,7 @@
 *.vcxproj
 *.user
 *.filters
+*.obj
+*.suo
+*.db
+*.ipch
