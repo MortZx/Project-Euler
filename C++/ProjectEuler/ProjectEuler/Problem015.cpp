@@ -19,54 +19,7 @@ _ _		_			_
 How many such routes are there through a 20×20 grid?
 
 */
-//
-//class GraphNode
-//{
-//	GraphNode(unsigned int x, unsigned int y) { xPos = x; yPos = y; }
-//	GraphNode* Parent;
-//	unsigned int xPos;
-//	unsigned int yPos;
-//private:
-//	//MoveDown
-//};
-//
-///**
-// * Can we move right on the grid?
-// *
-// * @param xPos - How far right we are
-// * @param gridSize - Maximum size in x-axis
-// * @return true - If we can move right on the grid
-// */
-//bool CanMoveRight(unsigned int xPos, unsigned int gridSize)
-//{
-//	return xPos < gridSize ? true : false;
-//}
-//
-///**
-// * Can we move down on the grid?
-// *
-// * @param xPos - How far down we are
-// * @param gridSize - Maximum size in y-axis
-// * @return true - If we can move down on the grid
-// */
-//bool CanMoveDown(unsigned int yPos, unsigned int gridSize)
-//{
-//	return yPos < gridSize ? true : false;
-//}
 
-/**
- * Have we reached the goal?
- *
- * @param xPos - How far right we are
- * @param yPos - How far down we are
- * @param gridSize - Total size of the square grid
- * @return true - If we're at the bottom right corner
- */
-//bool IsAtGoal(unsigned int xPos, unsigned int yPos, unsigned int gridSize)
-//{
-//	if (xPos == )
-//	return xPos < gridSize ? true : false;
-//}
 
 std::vector<std::vector<unsigned int>> graph;
 
