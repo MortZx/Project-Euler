@@ -15,7 +15,7 @@ using std::chrono::high_resolution_clock;
 int main()
 {
 	// Set the problem number to solve and number of iterations
-	unsigned int problemNumber = 14;
+	unsigned int problemNumber = 15;
 	unsigned int iterations = 1;
 
 	printf("Solution to problem %d: ", problemNumber);
@@ -125,6 +125,15 @@ int main()
 			unsigned int maxVal = 1000000;
 			i == 0 ? printf("%d", problem14(maxVal))
 			   	   : problem14(maxVal);
+			break;
+		}
+
+		case 15:
+		{
+			unsigned int width = 20;
+			unsigned int length = 20;
+			i == 0 ? printf("%d", problem15(width, length))
+				   : problem15(width, length);
 			break;
 		}
 		}
