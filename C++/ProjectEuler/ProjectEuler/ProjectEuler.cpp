@@ -131,7 +131,7 @@ int main()
 		case 16:
 		{
 			unsigned int power = 1000;
-			i == 0 ? printf("%d", Problem16(power))
+			i == 0 ? printf("%llu", Problem16(power))
 				   : Problem16(power);
 			break;
 		}
