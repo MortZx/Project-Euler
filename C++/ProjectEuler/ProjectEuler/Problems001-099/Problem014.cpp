@@ -1,8 +1,3 @@
-#include "pch.h"
-#include "Problems.h"
-#include "Utils.h"
-
-
 /*
 =================
 =   Problem 14   =	Largest Collatz sequence
@@ -24,8 +19,17 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 */
 
+#include "pch.h"
+#include "Problems.h"
+#include "Utils.h"
 
-unsigned int problem14(const unsigned int maxLim)
+
+/**
+ * Expand the Collatz sequence for all numbers within the limit
+ *
+ * @param maxLim - Upper limit
+ */
+unsigned int Problem14(const unsigned int maxLim)
 {
 	unsigned int maxStartVal = 2;
 	unsigned int maxTermsInChain = 1;

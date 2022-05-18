@@ -3,7 +3,6 @@
 =   Problem 11   =	Largest product in a grid
 ==================
 
-
 In the 20×20 grid below, four numbers along a diagonal line have been marked in *.
 
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
@@ -65,15 +64,16 @@ const unsigned int grid[20][20] = {
 		{1,70,54,71,83,51,54,69,16,92,33,48,61,43,52, 1,89,19,67,48} };
 
 
-/*
-Based on current grid coordinate and direction considered, find product of adjacent numbers
-@param xIndex:  int - x-coordinate in grid
-@param yIndex:	int - y-coordinate in grid
-@param xOffset: int (binary) - allow to include offset in x coordinate
-@param yOffset: int (binary) - allow to include offset in y coordinate
-@return - unsigned int - product of numAdj numbers in a direction
+/**
+ * Based on current grid coordinate and direction considered, find product of adjacent numbers
+ * 
+ * @param xIndex - x-coordinate in grid
+ * @param yIndex - y-coordinate in grid
+ * @param xOffset - Allow to include offset in x coordinate
+ * @param yOffset - Allow to include offset in y coordinate
+ * @return Product of numAdj numbers in a direction
 */
-unsigned int maxProdInRange(unsigned int xIndex, unsigned int yIndex, int xOffset, unsigned int yOffset) 
+unsigned int MaxProdInRange(unsigned int xIndex, unsigned int yIndex, int xOffset, unsigned int yOffset) 
 {
 	unsigned int prod = 1;
 	for (unsigned int num = 0; num < ADJACENT_NUMS; ++num)
@@ -84,13 +84,12 @@ unsigned int maxProdInRange(unsigned int xIndex, unsigned int yIndex, int xOffse
 }
 
 
-/*
-Iterate thorugh every number and find product in 4 directions:
-	right, down, diagonal right and diagonal left
-!! does not return the index of those numbers!
-@return - integer - largest product of numAdj numbers in any direction
-*/
-unsigned int problem11() 
+/**
+ * For each number in th grid, find the product in 4 directions:
+ *	Right, down, diagonal right and diagonal left
+ * !! Does not return the index of those numbers!
+ */
+unsigned int Problem11() 
 {
 	unsigned int maxProd = 0;
 	for (unsigned int i = 0; i < GRID_SIZE; ++i)
@@ -100,25 +99,25 @@ unsigned int problem11()
 			// check right
 			if (j + ADJACENT_NUMS <= GRID_SIZE)
 			{
-				maxProd = std::max(maxProdInRange(i, j, 0, 1), maxProd);
+				maxProd = std::max(MaxProdInRange(i, j, 0, 1), maxProd);
 			}
 
 			// check down
 			if (i + ADJACENT_NUMS <= GRID_SIZE)
 			{
-				maxProd = std::max(maxProdInRange(i, j, 1, 0), maxProd);
+				maxProd = std::max(MaxProdInRange(i, j, 1, 0), maxProd);
 			}
 
 			// check diag right
 			if ((i + ADJACENT_NUMS <= GRID_SIZE) && (j + ADJACENT_NUMS <= GRID_SIZE))
 			{
-				maxProd = std::max(maxProdInRange(i, j, 1, 1), maxProd);
+				maxProd = std::max(MaxProdInRange(i, j, 1, 1), maxProd);
 			}
 
 			// check diag left
 			if ((ADJACENT_NUMS - 1 <= i) && (j + ADJACENT_NUMS <= GRID_SIZE))
 			{
-				maxProd = std::max(maxProdInRange(i, j, -1, 1), maxProd);
+				maxProd = std::max(MaxProdInRange(i, j, -1, 1), maxProd);
 			}
 		}
 	}

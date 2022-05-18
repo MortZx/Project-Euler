@@ -1,3 +1,12 @@
+/*
+=================
+=   Problem 13   =	Large Sum
+==================
+
+Work out the first ten digits of the sum of the following one-hundred
+50-digit numbers
+*/
+
 #include "pch.h"
 #include "Problems.h"
 #include "StringUtils.h"
@@ -5,26 +14,6 @@
 #include<iostream>
 
 
-/*
-=================
-=   Problem 13   =	Large Sum
-==================
-
-
-Work out the first ten digits of the sum of the following one-hundred
-50-digit numbers
-*/
-
-
-/*
-long long can hold up to 20 digits
-each number can be saved as a string or as an array
-
-
-*/
-
-//const unsigned int MAX_DIGITS = 50;
-//const unsigned int ASCII_CODE_0 = 48;
 const unsigned int FIRST_10_DIGITS = 10;
 const unsigned int ARRAY_SIZE = 100;
 
@@ -129,8 +118,12 @@ std::string numbers[ARRAY_SIZE] = {	"3710728753390210279879799822083759024651013
 									"20849603980134001723930671666823555245252804609722",
 									"53503534226472524250874054075591789781264330331690" };
 
-
-void problem13(std::string& strRes) 
+/**
+ * Perform string addition to work with large numbers
+ * 
+ * @param[out] strRes - String to store the result
+ */
+void Problem13(std::string& strRes) 
 {
 	strRes = "0";
 

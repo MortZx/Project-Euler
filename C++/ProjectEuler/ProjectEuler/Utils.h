@@ -35,6 +35,20 @@ namespace Utils
 	void GetFirstXFibonacciSequence(const unsigned int lim, std::vector<unsigned int>& vecFib);
 
 	/**
+	 * (1 + 2 + ... )^2 = 
+	 *
+	 * @param naturalNumRange - Upper limit
+	 */
+	unsigned int SquareOfSum(unsigned int naturalNumRange);
+
+	/**
+	 * 1^2 + 2^2 + ...
+	 *
+	 * @param naturalNumRange - Upper limit
+	 */
+	unsigned int SumOfSquares(unsigned int naturalNumRange);
+
+	/**
 	 * Returns the Nth prime number
 	 *
 	 * @param index Nth number

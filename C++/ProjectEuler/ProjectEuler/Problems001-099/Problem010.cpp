@@ -2,7 +2,9 @@
 =================
 =   Problem 10   =	Summation of primes
 ==================
+
 The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
 Find the sum of all the primes below two million.
 */
 
@@ -14,18 +16,20 @@ Find the sum of all the primes below two million.
 #include <numeric>
 
 
-/*
-Problem 7:Find prime by index
---> Edit to sum prime numbers
-*/
-unsigned long long int problem10(unsigned int n) 
+/**
+ * Problem 7 was finding the nth prime number
+ * Edit it to sum the prime number
+ *
+ * @param n - Upper limit
+ */
+unsigned long long int Problem10(unsigned int n) 
 {
 	// first prime number is 2
 	std::vector<unsigned int> primeList{ 2 };
 	unsigned long long int sum = 2;
 
-	// iterate through all number to find the first n prime numbers and keeping track of the sum
-	// we know all prime numbers are odd except 2 so we can increment by 2
+	// Iterate through all number to find the first n prime numbers and keeping track of the sum
+	// We know all prime numbers are odd except 2 so we can increment by 2
 	for (unsigned int i = 3; i < n; i += 2) 
 	{
 		for (auto prime : primeList) 

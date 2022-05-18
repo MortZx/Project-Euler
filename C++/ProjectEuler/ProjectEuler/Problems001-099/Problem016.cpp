@@ -1,9 +1,3 @@
-#include "pch.h"
-#include "Problems.h"
-#include "Utils.h"
-#include "StringUtils.h"
-
-
 /*
 =================
 =   Problem 16   =	Power digit sum
@@ -15,7 +9,17 @@ What is the sum of the digits of the number 2^1000?
 
 */
 
+#include "pch.h"
+#include "Problems.h"
+#include "Utils.h"
+#include "StringUtils.h"
 
+
+/**
+ * Perform string multiplication to work with large numbers
+ *
+ * @param power - power to raise 2 by (bonus if over 9000!)
+ */
 unsigned long long Problem16(const unsigned int power)
 {
 	unsigned long long sumOfDigits = 0;

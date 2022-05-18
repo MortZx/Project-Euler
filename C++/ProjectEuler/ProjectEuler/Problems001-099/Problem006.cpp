@@ -1,46 +1,31 @@
-#include "pch.h"
-#include "Problems.h"
-
-#include <cmath>
-
-using std::pow;
-
 /*
 =================
 =   Problem 6   =	Sum Square Difference
-==================
+=================
 
+The sum of the squares of the first ten natural numbers is,
+	1^2 + 2^2 + ... + 10^2 = 385
+The square of the sum of the first ten natural numbers is,
+	(1 + 2 + ... + 10)^2 = 55^2 = 3025
+Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is
+	3025 - 385 = 2640
 
-2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
-
-What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 */
 
+#include "pch.h"
+#include "Problems.h"
+#include "Utils.h"
 
-unsigned int squareOfSum(unsigned int naturalNumRange) 
+#include <cmath>
+
+
+/**
+ * Sum of Squares Vs Square of Sum
+ *
+ * @param[in] naturalNumRange - Range to consider
+ */
+unsigned int Problem6(unsigned int naturalNumRange) 
 {
-	unsigned int sumNum = 0;
-	for (unsigned int i = 0; i < naturalNumRange + 1; ++i) 
-	{
-		sumNum += i;
-	}
-	return static_cast<unsigned int>(pow(sumNum, 2));
-}
-
-
-unsigned int sumOfSquares(unsigned int naturalNumRange) 
-{
-	unsigned int sumPow = 0;
-	for (unsigned int i = 0; i < naturalNumRange + 1; ++i) 
-	{
-		sumPow += static_cast<unsigned int>(pow(i, 2));
-	}
-	return sumPow;
-}
-
-
-// 
-unsigned int problem6(unsigned int naturalNumRange) 
-{
-	return (squareOfSum(naturalNumRange) - sumOfSquares(naturalNumRange));
+	return (Utils::SquareOfSum(naturalNumRange) - Utils::SumOfSquares(naturalNumRange));
 }

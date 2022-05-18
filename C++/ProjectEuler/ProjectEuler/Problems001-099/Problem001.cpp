@@ -15,8 +15,12 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 #include <iostream>
 
 
-// Check if number is divisible by 3 or 5 and add to the sum
-unsigned int problem1(int lim) 
+/**
+ * Check if number is divisible by 3 or 5 and add to the sum
+ * 
+ * @param[in] lim - Upper limit
+ */
+unsigned int Problem1(int lim) 
 {
 	unsigned int ans = 0;
 

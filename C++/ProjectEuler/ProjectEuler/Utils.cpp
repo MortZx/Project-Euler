@@ -64,6 +64,32 @@ void Utils::GetFirstXFibonacciSequence(const unsigned int lim, std::vector<unsig
 	}
 }
 
+/**
+ * (1 + 2 + ... )^2 =
+ */
+unsigned int Utils::SquareOfSum(unsigned int naturalNumRange)
+{
+	unsigned int sumNum = 0;
+	for (unsigned int i = 0; i < naturalNumRange + 1; ++i)
+	{
+		sumNum += i;
+	}
+	return static_cast<unsigned int>(pow(sumNum, 2));
+}
+
+/**
+ * 1^2 + 2^2 + ...
+ */
+unsigned int Utils::SumOfSquares(unsigned int naturalNumRange)
+{
+	unsigned int sumPow = 0;
+	for (unsigned int i = 0; i < naturalNumRange + 1; ++i)
+	{
+		sumPow += static_cast<unsigned int>(pow(i, 2));
+	}
+	return sumPow;
+}
+
 
 /*
  * Incrementally check if the current number is evenly divisible by the current list of prime numbers.

@@ -1,17 +1,7 @@
-#include "pch.h"
-#include "Problems.h"
-
-#include <math.h>
-#include <cmath>
-#include <iostream>
-
-using std::pow;
-
 /*
 =================
 =   Problem 9   =	Special Pythagorean triplet
 ==================
-
 
 A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
 					a^2 + b^2 = c^2
@@ -22,11 +12,20 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product abc.
 */
 
+#include "pch.h"
+#include "Problems.h"
 
-/*
+#include <math.h>
+#include <cmath>
+#include <iostream>
 
-*/
-double problem9(unsigned int lim) 
+
+/**
+ * Imcrement a and b, testing for c each time
+ *
+ * @param lim - Sum of (a + b + c)
+ */
+double Problem9(unsigned int lim) 
 {
 	double c = 0.0;
 

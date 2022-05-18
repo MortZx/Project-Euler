@@ -15,7 +15,7 @@ using std::chrono::high_resolution_clock;
 int main()
 {
 	// Set the problem number to solve and number of iterations
-	unsigned int problemNumber = 16;
+	unsigned int problemNumber = 3;
 	unsigned int iterations = 1;
 
 	printf("Solution to problem %d: ", problemNumber);
@@ -31,91 +31,91 @@ int main()
 		{
 			int lim = 1000;
 			// Only print the result on the last iteration
-			i == 0 ? printf("%d", problem1(lim))
-				   : problem1(lim);
+			i == 0 ? printf("%d", Problem1(lim))
+				   : Problem1(lim);
 			break;
 		}
 		case 2:
 		{
 			int lim = 4000000;
-			i == 0 ? printf("%d", problem2(lim))
-				   : problem2(lim);
+			i == 0 ? printf("%d", Problem2(lim))
+				   : Problem2(lim);
 			break;
 		}
 		case 3:
 		{
 			unsigned long long int num = 600851475143;
-			i == 0 ? printf("%d", problem3(num))
-				   : problem3(num);
+			i == 0 ? printf("%d", Problem3(num))
+				   : Problem3(num);
 			break;
 		}
 		case 4:
 		{
 			unsigned int numDigits = 3;
-			i == 0 ? printf("%d", problem4(numDigits))
-				   : problem4(numDigits);
+			i == 0 ? printf("%d", Problem4(numDigits))
+				   : Problem4(numDigits);
 			break;
 		}
 		case 5:
 		{
 			unsigned int evenlyDivisibleRange = 20;
-			i == 0 ? printf("%d", problem5(evenlyDivisibleRange))
-				   : problem5(evenlyDivisibleRange);
+			i == 0 ? printf("%d", Problem5(evenlyDivisibleRange))
+				   : Problem5(evenlyDivisibleRange);
 			break;
 		}
 		case 6:
 		{
 			unsigned int naturalNumRange = 100;
-			i == 0 ? printf("%d", problem6(naturalNumRange))
-				   : problem6(naturalNumRange);
+			i == 0 ? printf("%d", Problem6(naturalNumRange))
+				   : Problem6(naturalNumRange);
 			break;
 		}
 		case 7:
 		{
 			unsigned int index = 10001;
-			i == 0 ? printf("%d", problem7(index))
-				   : problem7(index);
+			i == 0 ? printf("%d", Problem7(index))
+				   : Problem7(index);
 			break;
 		}
 		case 8:
 		{
 			unsigned int digits = 13;
-			i == 0 ? printf("%llu", problem8(digits))
-				   : problem8(digits);
+			i == 0 ? printf("%llu", Problem8(digits))
+				   : Problem8(digits);
 			break;
 		}
 		case 9:
 		{
 			unsigned int lim = 1000;
-			i == 0 ? printf("%f", problem9(lim))
-				   : problem9(lim);
+			i == 0 ? printf("%f", Problem9(lim))
+				   : Problem9(lim);
 			break;
 		}
 		case 10:
 		{
 			unsigned int numPrimes = 2000000;
-			i == 0 ? printf("%llu", problem10(numPrimes))
-				   : problem10(numPrimes);
+			i == 0 ? printf("%llu", Problem10(numPrimes))
+				   : Problem10(numPrimes);
 			break;
 		}
 		case 11:
 		{
-			i == 0 ? printf("%d", problem11())
-				   : problem11();
+			i == 0 ? printf("%d", Problem11())
+				   : Problem11();
 			break;
 		}
 		case 12:
 		{
 			int divisors = 500;
-			i == 0 ? printf("%d", problem12(divisors))
-				   : problem12(divisors);
+			i == 0 ? printf("%d", Problem12(divisors))
+				   : Problem12(divisors);
 			break;
 		}
 
 		case 13:
 		{
 			static std::string strRes{ "" };
-			problem13(strRes);
+			Problem13(strRes);
 			if (i == 0) { printf("%s", strRes.c_str()); }
 			break;
 		}
@@ -123,8 +123,8 @@ int main()
 		case 14: 
 		{
 			unsigned int maxVal = 1000000;
-			i == 0 ? printf("%d", problem14(maxVal))
-			   	   : problem14(maxVal);
+			i == 0 ? printf("%d", Problem14(maxVal))
+			   	   : Problem14(maxVal);
 			break;
 		}
 

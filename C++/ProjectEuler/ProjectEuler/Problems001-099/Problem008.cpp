@@ -1,15 +1,7 @@
-#include "pch.h"
-#include "Problems.h"
-
-#include <vector>
-#include <string>
-
-
 /*
 =================
 =   Problem 8   =	Largest product in a series
 ==================
-
 
 The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
 73167176531330624919225119674426574742355349194934
@@ -36,9 +28,19 @@ Find the thirteen adjacent digits in the 1000-digit number that have the greates
 What is the value of this product?
 */
 
+#include "pch.h"
+#include "Problems.h"
+
+#include <vector>
+#include <string>
 
 
-unsigned long long int problem8(unsigned int digits) {
+/**
+ * Calculate the product of n adjacent numbers for each digit
+ *
+ * @param digits - Number of adjacent digits to consider
+ */
+unsigned long long int Problem8(unsigned int digits) {
 	std::string sequence{ "73167176531330624919225119674426574742355349194934"
 		"96983520312774506326239578318016984801869478851843"
 		"85861560789112949495459501737958331952853208805511"
